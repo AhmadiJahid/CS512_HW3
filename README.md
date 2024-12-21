@@ -1,75 +1,57 @@
 # CS512_HW3
 
-Sensorless Drive Diagnosis Using XGBoost
-This project classifies cars based on features extracted from electric drive currents. It uses the Sensorless Drive Diagnosis dataset from the UCI Machine Learning Repository and leverages the XGBoost library for multi-class classification.
+🚗 Sensorless Drive Diagnosis with XGBoost 🚗
+Classifying car conditions based on electric drive currents using machine learning. This project leverages the Sensorless Drive Diagnosis Dataset from the UCI Machine Learning Repository and the powerful XGBoost algorithm to achieve near-perfect classification accuracy.
 
-Overview
-The dataset contains features from electric drive currents of cars with intact and defective components.
-The goal is to classify cars into 11 distinct classes based on the extracted features.
-The project demonstrates:
-Data preprocessing
-Hyperparameter tuning
-Model evaluation using metrics like AUC and ROC curves
-Dataset
-Source: UCI Machine Learning Repository - Sensorless Drive Diagnosis Dataset
-Description:
-Features: 48 numerical features extracted from electric drive currents.
-Labels: 11 classes representing different conditions of the car's components.
+📋 Overview
+Predict the condition of car components using 48 numerical features extracted from electric drive currents.
+11 distinct classes represent intact or defective car components.
+Highlights:
+Advanced gradient boosting via XGBoost.
+Hyperparameter tuning for optimal performance.
+Evaluation using AUC and multi-class ROC curves.
+📊 Dataset
+Source: UCI Machine Learning Repository
+Details:
+Features: 48 numerical features derived from electric currents.
+Classes: 11 labels representing different component states.
 Size: 58,509 samples.
-Model
-Algorithm: Gradient Boosting using XGBoost.
-Key Features:
-Hyperparameter Tuning:
-Number of trees (n_estimators)
-Tree depth (max_depth)
-Learning rate (learning_rate)
+Format: Text file (sensorless_drive_diagnosis.txt), space-delimited.
+🧠 Model Details
+Algorithm: XGBoost, a high-performance gradient boosting framework.
 Metrics:
-Micro-averaged AUC
-ROC Curve for each class
-Steps to Reproduce
-Setup:
+Micro-Averaged AUC for overall performance.
+ROC Curves for individual class evaluation.
+Hyperparameter Tuning:
+Number of trees: n_estimators.
+Tree depth: max_depth.
+Learning rate: learning_rate.
+🛠 How to Run
+1️⃣ Environment Setup
+Install the required libraries:
 
-Install required libraries:
 bash
 Copy code
-pip install xgboost scikit-learn matplotlib pandas
-Download the dataset from the UCI Repository and save it as sensorless_drive_diagnosis.txt.
-Run the Code:
+pip install xgboost scikit-learn matplotlib pandas numpy
+2️⃣ Dataset
+Download the dataset:
 
-Train the model and tune hyperparameters:
-Number of trees (n_estimators)
-Tree depth (max_depth)
-Learning rate (learning_rate)
-Select optimal hyperparameters based on AUC.
-Final Model:
+Sensorless Drive Diagnosis Dataset
+Save it as sensorless_drive_diagnosis.txt in your project folder.
+3️⃣ Run the Code
+Execute the script to:
 
-Combine training and validation datasets.
-Retrain the model using the best hyperparameters.
+Train the model.
+Tune hyperparameters:
+n_estimators (trees): [10, 50, 100, 500]
+max_depth (tree depth): [4, 6, 8]
+learning_rate: [0.001, 0.01, 0.1]
 Evaluate the model on the test set.
-Evaluate:
+4️⃣ Results
+The final model retrains on the combined training + validation data and evaluates on the test data.
 
-Test AUC: 0.99999
-Visualize the ROC curve.
-Results
+🏆 Results
 Best Hyperparameters:
-Number of trees (n_estimators): 100
-Tree depth (max_depth): 6
-Learning rate (learning_rate): 0.01
-Test AUC: 0.99999
-ROC Curve:
-Near-perfect classification with micro-average AUC of 1.000.
-Project Structure
-sensorless_drive_diagnosis.txt: Dataset file.
-train_model.py: Python script for training and evaluating the model.
-README.md: This documentation.
-Dependencies
-Python 3.8+
-Required libraries:
-xgboost
-scikit-learn
-matplotlib
-pandas
-numpy
-Acknowledgements
-Dataset provided by the UCI Machine Learning Repository.
-Model implementation uses the XGBoost library.
+Number of Trees (n_estimators): 100
+Tree Depth (max_depth): 6
+Learning Rate (learning_rate): 0.1
